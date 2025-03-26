@@ -1,10 +1,15 @@
 include "include/hardware.inc"
 
 ; using "src/vwf_demo.asm"
+using "src/assets/sample_simple.yarn.asm"
 using "src/assets/sound_effect1.vgm.asm"
 using "src/assets/sound_effect3.vgm.asm"
 using "src/assets/pipe_de_bois.uge.asm"
 using "src/audio.asm"
+using "modules/yarn2asm/yarn.inc"
+
+def Arnaud = 0
+export Arnaud
 
 SECTION "Intro", ROMX
 

@@ -77,6 +77,7 @@ purge:clean
 	$(call $(RM), $(call rwildcard,$(SRCDIR),*.mk))
 	$(call $(RM), $(call rwildcard,$(SRCDIR),*.vgm.asm))
 	$(call $(RM), $(call rwildcard,$(SRCDIR),*.uge.asm))
+	$(call $(RM), $(call rwildcard,$(SRCDIR),*.yarn.asm))
 	$(call $(RM), $(call rwildcard,$(INCDIR),*.mk))
 	$(call $(RM), $(call rwildcard,$(RESDIR),*.vwf))
 	$(call $(RM), $(call rwildcard,$(RESDIR),*.vwflen))
@@ -180,7 +181,7 @@ bin/%.${ROMEXT}:$(OBJS) project.mk
 # By default, cloning the repo does not init submodules; if that happens, warn the user.
 # Note that the real paths aren't used!
 # Since RGBASM fails to find the files, it outputs the raw paths, not the actual ones.
-modules/hardware.inc/hardware.inc modules/rgbds-structs/structs.asm modules/gb-vwf/vwf.asm modules/hUGEDriver/hUGEDriver.asm modules/vgm2asm/sfxplayer.asm:
+modules/hardware.inc/hardware.inc modules/rgbds-structs/structs.asm modules/gb-vwf/vwf.asm modules/hUGEDriver/hUGEDriver.asm modules/vgm2asm/sfxplayer.asm modules/yarn2asm/yarn2asm.py:
 	@echo '$@ is not present; have you initialized submodules?'
 	@echo 'Run `git submodule update --init`, then `make clean`, then `make` again.'
 	@echo 'Tip: to avoid this, use `git clone --recursive` next time!'
