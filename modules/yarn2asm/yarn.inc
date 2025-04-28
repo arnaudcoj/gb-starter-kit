@@ -1,3 +1,5 @@
+include "include/charmap.inc"
+
 def TXT = $01
 def CHOICE_ENTRY = $02
 def CHOICE_END = $03

@@ -38,7 +38,11 @@ if (@ARGV == 3) {
     print $mk_fh "$obj_file: $source_file\n";
 }
 
-if ($source_file !~ /\.uge.asm\z/) {
+if ($source_file =~ /\.uge.asm\z/) {
+    print $mk_fh "include modules/hUGEDriver.mk\n";
+} elsif ($source_file =~ /\.yarn.asm\z/) {
+    print $mk_fh "include modules/yarn2asm.mk\n";
+} else {
     # Parcourir le fichier source ligne par ligne
     while (my $line = <$src_fh>) {
         # Règle spéciale pour vwf
@@ -54,7 +58,7 @@ if ($source_file !~ /\.uge.asm\z/) {
         # Rechercher les lignes avec include("fichier") ou incbin("fichier") ou using("fichier")
         if ($line =~ /^\s*(?:(?:include|incbin|using)\s+(?:"([^"]*)"|\("([^"]*)"\))|(?:include|incbin|using)\((?:"([^"])*")\))\s*$/i) {
             my $file = $1;
-            
+
             if ($file =~ /^(modules\/[^\/]*)/) {
                 print $mk_fh "include $1.mk\n";
             } elsif ($file =~ /\{(?:[^\}]+)\}/i) {

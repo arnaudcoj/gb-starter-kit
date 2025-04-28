@@ -1,9 +1,11 @@
 include/hardware.inc
+include/charmap.inc
 /bin/
 /obj/
 /assets/
 *.uge.asm
 *.vgm.asm
+*.yarn.asm
 *.mk
 !modules/**.mk
 tools/gb-vwf

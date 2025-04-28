@@ -1,5 +1,5 @@
 INCLUDE "include/hardware.inc"
-INCLUDE "assets/charmap.inc"
+INCLUDE "include/charmap.inc"
 
 using "modules/gb-vwf/vwf.asm"
 using "src/audio.asm"

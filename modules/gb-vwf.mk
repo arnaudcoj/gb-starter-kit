@@ -1,7 +1,7 @@
 ifndef MODULES_GB-VWF
 MODULES_GB-VWF = 1
 
-$(GENDIR)/charmap.inc:modules/gb-vwf/vwf.asm
+$(INCDIR)/charmap.inc:modules/gb-vwf/vwf.asm
 	$(call $(MKDIR),$(INCDIR))
 	$(RGBASM) $(ASFLAGS) -DPRINT_CHARMAP $^ > $@
 
