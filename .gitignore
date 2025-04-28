@@ -7,4 +7,5 @@ include/hardware.inc
 *.mk
 !modules/**.mk
 tools/gb-vwf
+*.pyc
 
